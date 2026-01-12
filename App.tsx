@@ -28,7 +28,7 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen w-full relative transition-colors duration-300">
+    <div className="min-h-screen w-full relative transition-colors duration-300 overflow-x-hidden">
       <NavBar />
       
       <main>
