@@ -1,7 +1,7 @@
 import React from 'react';
 import { Award, GraduationCap, Trophy, CheckCircle } from 'lucide-react';
 import { Section } from '@/shared/ui';
-
+import profileImg from "@/shared/assets/images/profile/profile.jpg";
 interface CardProps {
   title: string;
   items: string[];
@@ -79,11 +79,13 @@ export const ServiceCards: React.FC = () => {
                 className="absolute inset-[8px] bg-white"
                 style={{ clipPath: 'polygon(10% 20%, 30% 12%, 55% 15%, 80% 10%, 95% 25%, 92% 60%, 88% 85%, 60% 92%, 40% 88%, 25% 98%, 32% 78%, 10% 70%, 5% 45%)' }}
              >
-                <img 
-                  src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=800&q=80" 
-                  alt="Profile" 
-                  className="w-full h-full object-cover scale-110"
-                />
+                                <img
+  src={profileImg}
+  alt="송창현 프로필 사진"
+  className="w-full h-full object-cover scale-110"
+  loading="lazy"
+  decoding="async"
+/>
              </div>
            </div>
            
