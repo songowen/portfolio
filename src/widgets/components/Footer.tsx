@@ -15,7 +15,10 @@ export const Footer: React.FC = () => {
 
         
         {/* Changed font-serif to font-bold */}
-        <h2 className="text-5xl md:text-7xl mb-6 font-bold break-keep text-brand-cream">함께 성장하고 싶습니다.</h2>
+        <h2 className="text-5xl md:text-7xl mb-6 font-bold break-keep text-brand-cream">
+          Building products,<br />
+          not just features.
+        </h2>
         <p className="font-sans text-xl opacity-80 mb-10 max-w-xl mx-auto break-keep text-brand-cream">
           새로운 프로젝트 협업 제안이나 커피챗은 언제나 환영입니다.<br/>
           사용자에게 가치를 전달하는 서비스를 함께 만들어가요.
