@@ -1,6 +1,7 @@
 import React from 'react';
 import { Award, GraduationCap, Trophy, CheckCircle } from 'lucide-react';
-
+import { Section } from '@/shared/ui';
+import profileImg from "@/shared/assets/images/profile/profile.jpg";
 interface CardProps {
   title: string;
   items: string[];
@@ -48,8 +49,8 @@ export const ServiceCards: React.FC = () => {
   );
 
   return (
-    <section id="about" className="max-w-7xl mx-auto px-4 py-20">
-      
+    <Section id="about">
+
       <div className="text-center mb-12">
         <p className="font-sans text-brand-dark/80 dark:text-gray-300 text-lg max-w-5xl mx-auto break-keep leading-relaxed transition-colors duration-300">
           프론트엔드 개발자로서는 <Highlight>React</Highlight>와 <Highlight>TypeScript</Highlight>를 중심으로 사용자 흐름을 고려한 <Emphasis>화면 구현</Emphasis>과 <Emphasis>기능 완성</Emphasis>에 집중했습니다.
@@ -67,23 +68,26 @@ export const ServiceCards: React.FC = () => {
            {/* Torn Paper Container */}
            <div className="w-full max-w-[240px] md:max-w-[280px] aspect-square relative z-10 transition-transform duration-300 hover:scale-105 drop-shadow-xl flex items-center justify-center">
              
-             {/* Outer Border (Brand Green) - Torn Paper Shape */}
-             <div 
-                className="absolute inset-0 bg-brand-green"
-                style={{ clipPath: 'polygon(10% 20%, 30% 12%, 55% 15%, 80% 10%, 95% 25%, 92% 60%, 88% 85%, 60% 92%, 40% 88%, 25% 98%, 32% 78%, 10% 70%, 5% 45%)' }}
-             ></div>
+             {/* Natural photo frame */}
+             <div className="absolute inset-0 rounded-[32px] bg-brand-green/20 dark:bg-white/5"></div>
 
-             {/* Inner Image - Same Shape inset */}
-             <div 
-                className="absolute inset-[8px] bg-white"
-                style={{ clipPath: 'polygon(10% 20%, 30% 12%, 55% 15%, 80% 10%, 95% 25%, 92% 60%, 88% 85%, 60% 92%, 40% 88%, 25% 98%, 32% 78%, 10% 70%, 5% 45%)' }}
-             >
-                <img 
-                  src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=800&q=80" 
-                  alt="Profile" 
-                  className="w-full h-full object-cover scale-110"
-                />
+             {/* Frame border */}
+             <div className="absolute inset-[6px] rounded-[28px] bg-white/90 dark:bg-[#111] border-2 border-black/20 dark:border-white/20 shadow-xl"></div>
+
+             {/* Image */}
+             <div className="absolute inset-[14px] rounded-[22px] overflow-hidden border-2 border-black dark:border-white/20 bg-white dark:bg-[#111]">
+               <img
+                 src={profileImg}
+                 alt="송창현 프로필 사진"
+                 className="w-full h-full object-cover"
+                 loading="lazy"
+                 decoding="async"
+               />
              </div>
+
+             {/* Small sticker accents */}
+             <div className="absolute -top-2 left-8 w-14 h-6 bg-white/70 dark:bg-white/10 border border-black/10 dark:border-white/10 rounded-md rotate-[-6deg] shadow-sm"></div>
+             <div className="absolute -bottom-2 right-10 w-16 h-6 bg-white/70 dark:bg-white/10 border border-black/10 dark:border-white/10 rounded-md rotate-[5deg] shadow-sm"></div>
            </div>
            
            {/* Decorative elements behind */}
@@ -124,6 +128,6 @@ export const ServiceCards: React.FC = () => {
         />
       </div>
 
-    </section>
+    </Section>
   );
 };

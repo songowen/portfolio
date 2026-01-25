@@ -1,5 +1,6 @@
 import React from 'react';
 import { Mail, Linkedin, Github, Phone } from 'lucide-react';
+import profileImg from "@/shared/assets/images/profile/profile.jpg";
 
 export const Footer: React.FC = () => {
   return (
@@ -11,13 +12,13 @@ export const Footer: React.FC = () => {
       }}></div>
 
       <div className="max-w-4xl mx-auto text-center relative z-10">
-        <div className="w-24 h-24 mx-auto mb-8 rounded-full overflow-hidden border-4 border-brand-cream animate-pulse bg-gray-200">
-           {/* Placeholder for user avatar - could be replaced with actual image */}
-           <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=800&q=80" alt="Song Chang-hyun" className="w-full h-full object-cover grayscale" />
-        </div>
+
         
         {/* Changed font-serif to font-bold */}
-        <h2 className="text-5xl md:text-7xl mb-6 font-bold break-keep text-brand-cream">함께 성장하고 싶습니다.</h2>
+        <h2 className="text-5xl md:text-7xl mb-6 font-bold break-keep text-brand-cream">
+          Building products,<br />
+          not just features.
+        </h2>
         <p className="font-sans text-xl opacity-80 mb-10 max-w-xl mx-auto break-keep text-brand-cream">
           새로운 프로젝트 협업 제안이나 커피챗은 언제나 환영입니다.<br/>
           사용자에게 가치를 전달하는 서비스를 함께 만들어가요.

@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { NavBar } from './components/NavBar';
-import { HeroSection } from './components/HeroSection';
-import { ServiceCards } from './components/ServiceCards';
-import { ProjectsSection } from './components/ProjectsSection';
-import { SkillsSection } from './components/SkillsSection';
-import { Footer } from './components/Footer';
+import { NavBar } from '@/widgets/components/NavBar';
+import { HeroSection } from '@/widgets/components/HeroSection';
+import { ServiceCards } from '@/widgets/components/ServiceCards';
+import { ProjectsSection } from '@/widgets/components/ProjectsSection';
+import { SkillsSection } from '@/widgets/components/SkillsSection';
+import { Footer } from '@/widgets/components/Footer';
 import { ArrowUp } from 'lucide-react';
 
 const App: React.FC = () => {

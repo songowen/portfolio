@@ -37,10 +37,10 @@ const projects: Project[] = [
     techStack: ["React", "TypeScript", "Redux Toolkit", "PWA", "Vite", "TailwindCSS", "WebSocket"],
     image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=800&q=80",
     screenshots: [
-      "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=800&q=80", 
-      "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80"
+      "/images/projects/checkmate/01.png",
+      "/images/projects/checkmate/02.png",
+      "/images/projects/checkmate/03.png",
+      "/images/projects/checkmate/04.png",
     ],
     troubleshooting: [
       {
@@ -54,7 +54,7 @@ const projects: Project[] = [
         result: "데이터 전송량 90% 감소 (12MB -> 0.8MB) 및 업로드 속도 개선"
       }
     ],
-    github: "https://github.com/songowen"
+    github: "https://github.com/songowen/check-mate"
   },
   {
     title: "ARI (아리)",
@@ -74,10 +74,10 @@ const projects: Project[] = [
     techStack: ["Flutter", "Dart", "Riverpod", "Solidity", "NestJS", "Docker", "Jenkins"],
     image: "https://images.unsplash.com/photo-1614613535308-eb5fbd3d2c17?auto=format&fit=crop&w=800&q=80",
     screenshots: [
-      "https://images.unsplash.com/photo-1614613535308-eb5fbd3d2c17?auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1619983081563-430f63602796?auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1487180144351-b8472da7d491?auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1621416894569-0f39ed31d247?auto=format&fit=crop&w=800&q=80"
+      "/images/projects/ari/01.jpg",
+      "/images/projects/ari/02.jpg",
+      "/images/projects/ari/03.jpg",
+      "/images/projects/ari/04.jpg",
     ],
     troubleshooting: [
       {
@@ -91,7 +91,7 @@ const projects: Project[] = [
         result: "스크롤 시 60FPS 안정적 유지"
       }
     ],
-    github: "https://github.com/songowen"
+    github: "https://github.com/songowen/ari"
   },
   {
     title: "우끼끼 (Ukiki)",
@@ -111,10 +111,10 @@ const projects: Project[] = [
     techStack: ["React", "Zustand", "Tanstack Query", "WebSocket", "Google Maps API", "Styled-components"],
     image: "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=800&q=80",
     screenshots: [
-      "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1569336415962-a4bd9f69cd83?auto=format&fit=crop&w=800&q=80"
+      "/images/projects/ukiki/01.png",
+      "/images/projects/ukiki/02.png",
+      "/images/projects/ukiki/03.png",
+      "/images/projects/ukiki/04.png",
     ],
     troubleshooting: [
       {
@@ -128,7 +128,7 @@ const projects: Project[] = [
         result: "초기 렌더링 속도 1.5초 단축 및 줌 인/아웃 시 버벅임 제거"
       }
     ],
-    github: "https://github.com/songowen"
+    github: "https://github.com/songowen/ukiki"
   }
 ];
 
@@ -209,6 +209,18 @@ export const ProjectsSection: React.FC = () => {
 
              <div className="h-64 md:h-96 w-full overflow-hidden border-b-2 border-black dark:border-white/20 relative">
                <img src={selectedProject.image} alt={selectedProject.title} className="w-full h-full object-cover" />
+
+               {/* GitHub Icon Button */}
+               <a
+                 href={selectedProject.github || "https://github.com/songowen"}
+                 target="_blank"
+                 rel="noopener noreferrer"
+                 aria-label="GitHub"
+                 className="absolute top-4 right-16 z-20 w-11 h-11 flex items-center justify-center rounded-full bg-white/80 dark:bg-black/50 border-2 border-black/20 dark:border-white/30 backdrop-blur-sm hover:scale-110 hover:bg-white dark:hover:bg-black/70 transition-all duration-200"
+               >
+                 <Github size={22} className="text-brand-dark dark:text-white" />
+               </a>
+
                <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/90 via-black/50 to-transparent p-8 pt-32">
                  <h2 className="text-4xl md:text-6xl font-bold text-white mb-3">{selectedProject.title}</h2>
                  <p className="text-brand-green text-xl font-bold">{selectedProject.category} | {selectedProject.role}</p>
@@ -324,12 +336,6 @@ export const ProjectsSection: React.FC = () => {
                    </div>
                  </>
                )}
-
-               <div className="flex justify-end gap-4 pt-8 border-t border-gray-200 dark:border-white/10">
-                  <a href={selectedProject.github || "https://github.com/songowen"} target="_blank" rel="noopener noreferrer" className="bg-brand-dark dark:bg-white text-white dark:text-brand-dark px-8 py-4 rounded-xl font-bold flex items-center gap-2 hover:bg-gray-800 dark:hover:bg-gray-200 transition-colors text-lg">
-                    <Github size={24} /> GitHub 보러가기
-                  </a>
-               </div>
 
              </div>
            </div>
