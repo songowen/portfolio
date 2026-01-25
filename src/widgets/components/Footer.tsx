@@ -1,5 +1,6 @@
 import React from 'react';
 import { Mail, Linkedin, Github, Phone } from 'lucide-react';
+import profileImg from "@/shared/assets/images/profile/profile.jpg";
 
 export const Footer: React.FC = () => {
   return (
@@ -11,10 +12,7 @@ export const Footer: React.FC = () => {
       }}></div>
 
       <div className="max-w-4xl mx-auto text-center relative z-10">
-        <div className="w-24 h-24 mx-auto mb-8 rounded-full overflow-hidden border-4 border-brand-cream animate-pulse bg-gray-200">
-           {/* Placeholder for user avatar - could be replaced with actual image */}
-           <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=800&q=80" alt="Song Chang-hyun" className="w-full h-full object-cover grayscale" />
-        </div>
+
         
         {/* Changed font-serif to font-bold */}
         <h2 className="text-5xl md:text-7xl mb-6 font-bold break-keep text-brand-cream">함께 성장하고 싶습니다.</h2>
