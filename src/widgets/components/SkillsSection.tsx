@@ -1,4 +1,5 @@
 import React from 'react';
+import { Section, SectionHeading } from '@/shared/ui';
 
 interface SkillCardProps {
   name: string;
@@ -29,11 +30,8 @@ const SkillCard: React.FC<SkillCardProps> = ({ name, description, icon, colorCla
 
 export const SkillsSection: React.FC = () => {
   return (
-    <section id="stack" className="py-20 px-4 max-w-7xl mx-auto">
-       <div className="mb-12 text-center flex flex-col items-center gap-2">
-          <h2 className="text-4xl md:text-5xl font-bold text-brand-dark dark:text-white transition-colors duration-300">Skill & Tools</h2>
-          <div className="h-1 w-20 bg-brand-dark dark:bg-white mt-4"></div>
-       </div>
+    <Section id="stack">
+       <SectionHeading title="Skill & Tools" showDivider />
 
        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           <SkillCard 
@@ -157,6 +155,6 @@ export const SkillsSection: React.FC = () => {
             ]}
           />
        </div>
-    </section>
+    </Section>
   );
 };

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Award, GraduationCap, Trophy, CheckCircle } from 'lucide-react';
+import { Section } from '@/shared/ui';
 
 interface CardProps {
   title: string;
@@ -48,8 +49,8 @@ export const ServiceCards: React.FC = () => {
   );
 
   return (
-    <section id="about" className="max-w-7xl mx-auto px-4 py-20">
-      
+    <Section id="about">
+
       <div className="text-center mb-12">
         <p className="font-sans text-brand-dark/80 dark:text-gray-300 text-lg max-w-5xl mx-auto break-keep leading-relaxed transition-colors duration-300">
           프론트엔드 개발자로서는 <Highlight>React</Highlight>와 <Highlight>TypeScript</Highlight>를 중심으로 사용자 흐름을 고려한 <Emphasis>화면 구현</Emphasis>과 <Emphasis>기능 완성</Emphasis>에 집중했습니다.
@@ -124,6 +125,6 @@ export const ServiceCards: React.FC = () => {
         />
       </div>
 
-    </section>
+    </Section>
   );
 };
